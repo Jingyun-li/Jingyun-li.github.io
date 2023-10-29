@@ -7,6 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Personal profile page of Jingyun Li, showcasing education, skills, and projects.">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
     <title>Jingyun Li - Profile Page</title>
     <style>
     body {
@@ -126,6 +128,33 @@ footer a {
   color: #fff;
   text-decoration: none;
 }
+.skills {
+  background: #fff;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.skills h2 {
+  color: #333;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.skills ul {
+  padding: 0;
+  list-style: none;
+}
+
+.skills li {
+  display: inline-block;  /* Display skills inline */
+  background: #f4f4f4;
+  padding: 10px 15px;
+  margin: 5px 10px;  /* Add some space around each skill */
+  border-radius: 20px;
+}
+
 
 @media only screen and (max-width: 768px) {
   .container {
@@ -144,6 +173,11 @@ footer a {
   .profile-pic {
     max-width: 120px;  /* Adjust size on smaller screens */
     margin-bottom: 20px;  /* Add space between picture and text */
+  }
+
+  .skills li {
+    margin: 5px;  /* Reduce margin on smaller screens */
+    font-size: 12px;  /* Optional: reduce font size on smaller screens */
   }
 }
 
@@ -177,19 +211,38 @@ footer a {
                 <h2>Projects</h2>
                 <p>Here are some of my projects for data analysis:</p>
                 <ul>
-                  <li><i class="fas fa-project-diagram"></i> <a href="proj1.html">Health Insurance Costs: Impact of Demographics and Lifestyle</a></li>
-                  <li><i class="fas fa-project-diagram"></i> <a href="proj2.html">An analysis of the COVID-19 Pandemic</a></li>
+                  <li><i class="fas fa-project-diagram"></i> <a href="proj2.html">Health Insurance Costs: Impact of Demographics and Lifestyle</a></li>
+                  <li><i class="fas fa-project-diagram"></i> <a href="proj1.html">An analysis of the COVID-19 Pandemic</a></li>
                 </ul>
               </section>
 
               <section class="skills">
                 <h2>Skills</h2>
                 <ul>
-                  <li>Python</li>
-                  <li>R</li>
-                  <li>SAS</li>
-                  <!-- Add more skills here -->
+                  <b>Programming Languages:</b>
+                  <li>Python</li>  
+                  <li>R</li>  
+                  <li>SQL</li>
+                  <li>Java</li>
+                  <li>C</li>  
                 </ul>
+
+                <ul>
+                  <b>Data Analysis Tools:</b>
+                  <li>scikit-learn</li>  
+                  <li>Pandas</li>  
+                  <li>NumPy</li>
+                  <li>Matplotlib</li>
+                  <li>Tableau</li>  
+                </ul>
+
+                <ul>
+                  <b>Database Management:</b>
+                  <li>MySQL</li>  
+                  <li>PostgreSQL</li>  
+                  <li>MongoDB</li>
+                </ul>
+                 
               </section>
 
               <section class="work-experience">
@@ -205,7 +258,7 @@ footer a {
                 <h2>Contact Me</h2>
                 <p>Email: <a href="mailto:jingyli0605@gmail.com">jingyli0605@gmail.com</a></p>
                 <p>LinkedIn: <a href="https://www.linkedin.com/in/jingyun-li-7a3824234/" target="_blank">Jingyun Li</a></p>
-                <!-- Add more contact methods if necessary -->
+                <p>Phone: <a href="tel:+5715246048">+1 (571) 524-6048</a></p>
               </section>
               
         </div>
