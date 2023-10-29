@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha384-DyZuuL9Uf3Z1/n+p9+/PcLu8JOwPUFODq6DPIihYGyc8zTIDieRtMbc2b5UnhHul" crossorigin="anonymous">    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Personal profile page of Jingyun Li, showcasing education, skills, and projects.">
+    <title>Jingyun Li - Profile Page</title>
+    <style>
+    body {
+  font-family: Verdana, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+  overflow: hidden;
+}
+
+header {
+  background: #333;
+  color: #fff;
+  padding-top: 30px;
+  min-height: 70px;
+  border-bottom: #bbb 1px solid;
+}
+
+header a {
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+
+header ul {
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  color: #ffffff;
+}
+
+header li {
+  float: left;
+  display: inline;
+  padding: 0 20px 0 20px;
+}
+
+header #branding {
+  display: flex;
+  align-items: center;
+}
+
+header #branding h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+header nav {
+  float: right;
+  margin-top: 10px;
+}
+
+.profile-pic {
+  border-radius: 50%;
+  max-width: 150px;  /* Increased size of profile picture */
+  margin-right: 20px;
+}
+
+.profile-section {
+  display: flex;  /* Set to flex to align items in a row */
+  align-items: center;
+}
+
+.profile-section,
+.skills,
+.projects,
+.work-experience,
+.contact {
+  background: #fff;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  color: #333;
+  font-size: 20px;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+ul li {
+  background: #f4f4f4;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+ul li a {
+  text-decoration: none;
+  color: #333;
+}
+
+footer {
+  text-align: center;
+  padding: 20px 0;
+  background: #333;
+  color: #fff;
+}
+
+footer p {
+  margin: 0;
+}
+
+footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    width: 90%;
+  }
+
+  header h1 {
+    font-size: 20px;
+  }
+
+  .profile-section {
+    flex-direction: column;  /* Stack items vertically on smaller screens */
+    align-items: center;
+  }
+
+  .profile-pic {
+    max-width: 120px;  /* Adjust size on smaller screens */
+    margin-bottom: 20px;  /* Add space between picture and text */
+  }
+}
+
+      
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1><span class="highlight">Jingyun Li</span></h1>
+            </div>
+            <!-- Optional: Navigation Bar -->
+        </div>
+    </header>
+    <section class="main">
+        <div class="container">
+            <section class="bio">
+                <div class="profile-section">
+                    <img src="pfp.png" alt="Jingyun Li" class="profile-pic">
+                    <div>
+                        <h2>About Me</h2>
+                        <p>I am a senior at the University of Maryland College Park, 
+                            pursuing a double degree in Statistics and Computer Science along
+                            with a minor in Business Analytics.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="projects">
+                <h2>Projects</h2>
+                <p>Here are some of my projects for data analysis:</p>
+                <ul>
+                  <li><i class="fas fa-project-diagram"></i> <a href="proj1.html">Health Insurance Costs: Impact of Demographics and Lifestyle</a></li>
+                  <li><i class="fas fa-project-diagram"></i> <a href="proj2.html">An analysis of the COVID-19 Pandemic</a></li>
+                </ul>
+              </section>
+
+              <section class="skills">
+                <h2>Skills</h2>
+                <ul>
+                  <li>Python</li>
+                  <li>R</li>
+                  <li>SAS</li>
+                  <!-- Add more skills here -->
+                </ul>
+              </section>
+
+              <section class="work-experience">
+                <h2>Work Experience</h2>
+                <div>
+                  <h3>Intern, Company Name</h3>
+                  <p>Short description of your responsibilities and achievements during the internship.</p>
+                </div>
+                <!-- Add more experiences here -->
+              </section>
+                            
+              <section class="contact">
+                <h2>Contact Me</h2>
+                <p>Email: <a href="mailto:jingyli0605@gmail.com">jingyli0605@gmail.com</a></p>
+                <p>LinkedIn: <a href="https://www.linkedin.com/in/jingyun-li-7a3824234/" target="_blank">Jingyun Li</a></p>
+                <!-- Add more contact methods if necessary -->
+              </section>
+              
+        </div>
+    </section>
+    <footer>
+        <p>Copyright © 2023 Jingyun Li</p>
+        <p><a href="#branding">Back to Top</a></p> <!-- Back to Top Link -->
+    </footer>
+</body>
+</html>
