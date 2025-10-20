@@ -1,308 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio of Jingyun Li – Data Science, Finance, and Software Projects.">
+  <title>Portfolio | Jingyun Li</title>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha384-DyZuuL9Uf3Z1/n+p9+/PcLu8JOwPUFODq6DPIihYGyc8zTIDieRtMbc2b5UnhHul" crossorigin="anonymous">    
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Personal profile page of Jingyun Li, showcasing education, skills, and projects.">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
 
-    <title>Jingyun Li - Profile Page</title>
-    <style>
-    body {
-  font-family: Verdana, sans-serif;
-  line-height: 1.6;
-  margin: 0;
-  padding: 0;
-  background-color: #f9f9f9;
-  color: #333;
-}
-
-.work-experience-entry {
-  background: #fff;
-  padding: 15px;
-  margin-bottom: 20px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.container {
-  width: 80%;
-  margin: auto;
-  overflow: hidden;
-}
-
-header {
-  background: #333;
-  color: #fff;
-  padding-top: 30px;
-  min-height: 70px;
-  border-bottom: #bbb 1px solid;
-}
-
-header a {
-  color: #fff;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-size: 16px;
-}
-
-header ul {
-  padding: 0;
-  margin: 0;
-  overflow: hidden;
-  color: #ffffff;
-}
-
-header li {
-  float: left;
-  display: inline;
-  padding: 0 20px 0 20px;
-}
-
-header #branding {
-  display: flex;
-  align-items: center;
-}
-
-header #branding h1 {
-  margin: 0;
-  font-size: 24px;
-}
-
-header nav {
-  float: right;
-  margin-top: 10px;
-}
-
-.profile-pic {
-  border-radius: 50%;
-  max-width: 150px;  /* Increased size of profile picture */
-  margin-right: 20px;
-}
-
-.profile-section {
-  display: flex;  /* Set to flex to align items in a row */
-  align-items: center;
-}
-
-.profile-section,
-.skills,
-.projects,
-.work-experience,
-.contact {
-  background: #fff;
-  padding: 20px;
-  margin: 20px 0;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-h2 {
-  color: #333;
-  font-size: 20px;
-}
-
-ul {
-  padding: 0;
-  list-style: none;
-}
-
-ul li {
-  background: #f4f4f4;
-  padding: 10px;
-  margin-bottom: 10px;
-}
-
-ul li a {
-  text-decoration: none;
-  color: #333;
-}
-
-footer {
-  text-align: center;
-  padding: 20px 0;
-  background: #333;
-  color: #fff;
-}
-
-footer p {
-  margin: 0;
-}
-
-footer a {
-  color: #fff;
-  text-decoration: none;
-}
-.skills {
-  background: #fff;
-  padding: 20px;
-  margin: 20px 0;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.skills h2 {
-  color: #333;
-  font-size: 20px;
-  margin-bottom: 10px;
-}
-
-.skills ul {
-  padding: 0;
-  list-style: none;
-}
-
-.skills li {
-  display: inline-block;  /* Display skills inline */
-  background: #f4f4f4;
-  padding: 10px 15px;
-  margin: 5px 10px;  /* Add some space around each skill */
-  border-radius: 20px;
-}
-
-
-@media only screen and (max-width: 768px) {
-  .container {
-    width: 90%;
-  }
-
-  header h1 {
-    font-size: 20px;
-  }
-
-  .profile-section {
-    flex-direction: column;  /* Stack items vertically on smaller screens */
-    align-items: center;
-  }
-
-  .profile-pic {
-    max-width: 120px;  /* Adjust size on smaller screens */
-    margin-bottom: 20px;  /* Add space between picture and text */
-  }
-
-  .skills li {
-    margin: 5px;  /* Reduce margin on smaller screens */
-    font-size: 12px;  /* Optional: reduce font size on smaller screens */
-  }
-}
-
-      
-    </style>
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  
+  <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body>
-    <header>
-        <div class="container">
-            <div id="branding">
-                <h1><span class="highlight">Jingyun Li</span></h1>
-            </div>
-            <!-- Optional: Navigation Bar -->
+  <!-- Sidebar -->
+  <div id="sidebar-container"></div>
+
+  <!-- Main Content -->
+  <div class="content">
+    <h1>Portfolio</h1>
+    <div class="projects-grid">
+
+      <!-- Project Card 1 -->
+      <div class="card">
+        <img src="images/health_insurance.jpg" alt="Health Insurance Project Thumbnail">
+        <div class="card-content">
+          <h3>Health Insurance Costs</h3>
+          <p>Exploring how demographic and lifestyle factors influence health insurance pricing.</p>
+          <a href="health_insurance.html">View Project →</a>
         </div>
-    </header>
-    <section class="main">
-        <div class="container">
-            <section class="bio">
-                <div class="profile-section">
-                    <img src="pfp.png" alt="Jingyun Li" class="profile-pic">
-                    <div>
-                        <h2>About Me</h2>
-                        <p>I am a senior at the University of Maryland College Park, 
-                            pursuing a double degree in Statistics and Computer Science along
-                            with a minor in Business Analytics.</p>
-                    </div>
-                </div>
-            </section>
-            
-            <section class="projects">
-                <h2>Projects</h2>
-                <p>Here are some of my projects for data analysis:</p>
-                <ul>
-                  <li><i class="fas fa-project-diagram"></i> <a href="proj2.html">Health Insurance Costs: Impact of Demographics and Lifestyle</a></li>
-                  <li><i class="fas fa-project-diagram"></i> <a href="proj1.html">An analysis of the COVID-19 Pandemic</a></li>
-                </ul>
-                <p>Here are one of my projects for database design:</p>
-                <ul>
-                  <li><i class="fas fa-project-diagram"></i> <a href="../Project_Report.pdf" target="_blank"> 
-                    Electric Vehicle Population Analysis and Database Design</a></li>
-                </ul>
-              </section>
+      </div>
 
-              <section class="skills">
-                <h2>Skills</h2>
-                <ul>
-                  <b>Programming Languages:</b>
-                  <li>Python</li>  
-                  <li>R</li>  
-                  <li>SQL</li>
-                  <li>Java</li>
-                  <li>C</li>  
-                </ul>
-
-                <ul>
-                  <b>Data Analysis Tools:</b>
-                  <li>scikit-learn</li>  
-                  <li>Pandas</li>  
-                  <li>NumPy</li>
-                  <li>Matplotlib</li>
-                  <li>Tableau</li>  
-                </ul>
-
-                <ul>
-                  <b>Database Management:</b>
-                  <li>MySQL</li>  
-                  <li>PostgreSQL</li>  
-                  <li>MongoDB</li>
-                </ul>
-                 
-              </section>
-
-              <section class="work-experience">
-                <h2>Work Experience</h2>
-                <div class="work-experience-entry">
-                  <h3>Teaching Assistant, Department of Mathematics, University of Maryland, College Park</h3>
-                  <p>August 2023-Present | Part-Time</p>
-                  <ul>
-                    <li>Actively assist in the Data Science course Data110, dedicating several hours each week to course-related activities and student support.</li>
-                    <li>Manage coursework and academic needs of over 100 students.</li>
-                    <li>Provide guidance and help in understanding course material and assignments.</li>
-                  </ul>
-                </div>
-
-                <div class="work-experience-entry">
-                  <h3>Service Desk Specialist, Department of Resident Facilities, University of Maryland, College Park</h3>
-                  <p>August 2022-Present | Part-Time</p>
-                  <ul>
-                    <li>Enter maintenance and service requests received from phone calls into the software program.</li>
-                    <li>Provide physical front desk services and phone service, including off-hours, holidays, and weekends.</li>
-                    <li>Communicate with the team regarding the management of calls and previously noted requests.</li>
-                  </ul>
-               </div>
-
-               <div class="work-experience-entry">
-                  <h3>Research Assistant, ARLIS, University of Maryland, College Park</h3>
-                  <p>Jan 2023-August 2023 | Part-Time</p>
-                  <ul>
-                    <li>Applied geometric analysis theories to enhance machine learning algorithms for point cloud segmentation.</li>
-                    <li>Stayed up-to-date on recent developments in point cloud analysis, gaining valuable insights into machine learning.</li>
-                  </ul>
-              </div>
-              </section>
-              
-                            
-              <section class="contact">
-                <h2>Contact Me</h2>
-                <p>Email: <a href="mailto:jingyli2025@gmail.com">jingyli2025@gmail.com</a></p>
-                <p>LinkedIn: <a href="https://www.linkedin.com/in/jingyun-li-7a3824234/" target="_blank">Jingyun Li</a></p>
-                <p>Phone: <a href="tel:+5714375529">+1 (571) 437-5529</a></p>
-              </section>
-              
+      <!-- Project Card 2 -->
+      <div class="card">
+        <img src="images/covid_analysis.jpg" alt="COVID-19 Data Analysis Thumbnail">
+        <div class="card-content">
+          <h3>COVID-19 Data Analysis</h3>
+          <p>Data visualization and trend analysis of COVID-19 impact across countries and time.</p>
+          <a href="covid.html">View Project →</a>
         </div>
-    </section>
-    <footer>
-        <p>Copyright © 2025 Jingyun Li</p>
-        <p><a href="#branding">Back to Top</a></p> <!-- Back to Top Link -->
-    </footer>
+      </div>
+
+      <!-- Project Card 3 -->
+      <div class="card">
+        <img src="images/ev_database.jpg" alt="Electric Vehicle Database Project Thumbnail">
+        <div class="card-content">
+          <h3>Electric Vehicle Database Design</h3>
+          <p>Built a relational database to analyze U.S. electric vehicle population trends.</p>
+          <a href="../Project_Report.pdf" target="_blank">Open PDF →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
 </body>
 </html>
+
