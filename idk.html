@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Health Insurance Costs: Impact of Demographics and Lifestyle - Jingyun Li">
+  <title>Health Insurance Costs | Jingyun Li</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    body {
+      font-family: 'Helvetica Neue', sans-serif;
+      margin: 0;
+      background-color: #f8f8f8;
+      color: #333;
+      display: flex;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 230px;
+      background-color: #fff;
+      border-right: 1px solid #ddd;
+      height: 100vh;
+      position: fixed;
+      padding: 40px 25px;
+      box-shadow: 2px 0 10px rgba(0,0,0,0.05);
+    }
+
+    .sidebar h2 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .sidebar p {
+      font-size: 13px;
+      color: #666;
+      margin-bottom: 25px;
+    }
+
+    .sidebar a {
+      display: block;
+      color: #333;
+      text-decoration: none;
+      margin: 8px 0;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .sidebar a:hover {
+      color: #007bff;
+    }
+
+    /* Main Content */
+    .content {
+      margin-left: 270px;
+      padding: 50px;
+      width: calc(100% - 270px);
+    }
+
+    h1 {
+      font-size: 28px;
+      margin-bottom: 10px;
+      color: #222;
+    }
+
+    h2 {
+      color: #444;
+      margin-top: 30px;
+      font-size: 20px;
+      border-left: 4px solid #007bff;
+      padding-left: 10px;
+    }
+
+    p {
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    img.project-image {
+      width: 100%;
+      max-width: 900px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      margin: 25px 0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      color: #777;
+      border-top: 1px solid #ddd;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        flex-direction: column;
+      }
+
+      .sidebar {
+        width: 100%;
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+      }
+
+      .content {
+        margin-left: 0;
+        padding: 25px;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Sidebar -->
+  <div id="sidebar-container"></div>
+
+  <!-- Main Content -->
+  <div class="content">
+    <h1>Health Insurance Costs</h1>
+    <p><strong>Impact of Demographics and Lifestyle on Health Insurance Premiums</strong></p>
+
+    <img src="images/health_insurance.jpg" alt="Health Insurance Costs visualization" class="project-image">
+
+    <p>This project explores how demographic and lifestyle factors — such as age, BMI, smoking habits, and region — influence the cost of health insurance premiums. Using regression models and data visualization, we identified key patterns that highlight the significance of preventive health and demographic targeting in pricing models.</p>
+
+    <h2>Data & Methodology</h2>
+    <p>The dataset contained records of individuals with attributes including age, gender, BMI, region, number of children, and smoking status. The analysis was conducted in <b>Python</b> using <b>Pandas</b>, <b>Matplotlib</b>, and <b>scikit-learn</b> to build predictive models and visualize the cost relationships.</p>
+
+    <ul>
+      <li>Used multiple linear regression to model premium costs.</li>
+      <li>Visualized trends between BMI and charges using scatter plots and regression lines.</li>
+      <li>Compared average costs across demographic categories (e.g., smoker vs. non-smoker).</li>
+    </ul>
+
+    <h2>Findings</h2>
+    <p>Smoking status had the strongest impact on premiums, increasing costs by over 200% on average. BMI and age also showed a positive correlation with charges, while gender and region had limited effects. The project concludes that predictive pricing models could be improved with behavioral data and preventive metrics.</p>
+
+    <footer>
+      <p>© 2025 Jingyun Li | <a href="index.html">Back to Portfolio</a></p>
+    </footer>
+  </div>
+</body>
+</html>
