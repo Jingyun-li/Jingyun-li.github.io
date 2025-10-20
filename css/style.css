@@ -21,7 +21,7 @@ a {
 }
 
 a:hover {
-  color: #007bff;
+  color: #c1121f;
 }
 
 /* =========================
@@ -51,15 +51,26 @@ a:hover {
   margin-bottom: 25px;
 }
 
-.sidebar a {
-  display: block;
+/* Sidebar navigation links */
+.sidebar nav a {
+  display: flex;
+  align-items: center; /* align icon + text */
+  gap: 10px;
   color: #333;
-  margin: 8px 0;
+  margin: 10px 0;
   font-weight: 500;
+  font-size: 16px;
+  transition: color 0.2s ease;
 }
 
-.sidebar a:hover {
-  color: #007bff;
+.sidebar nav a i {
+  font-size: 17px;
+  width: 20px; /* aligns icons vertically */
+  text-align: center;
+}
+
+.sidebar nav a:hover {
+  color: #c1121f;
 }
 
 /* Sidebar footer */
@@ -82,7 +93,7 @@ a:hover {
 }
 
 /* =========================
-   FOOTER (used only if outside sidebar)
+   FOOTER (if used outside sidebar)
 ========================= */
 footer {
   text-align: center;
@@ -136,7 +147,7 @@ footer {
 
 .card-content a {
   text-decoration: none;
-  color: #007bff;
+  color: #c1121f;
   font-weight: 600;
 }
 
@@ -181,12 +192,115 @@ footer {
 
 .highlight-box {
   background-color: #f3f6fc;
-  border-left: 4px solid #007bff;
+  border-left: 4px solid #c1121f;
   padding: 15px 20px;
   border-radius: 6px;
   font-size: 14px;
   margin: 25px 0;
   color: #444;
+}
+
+/* =========================
+   CONTACT PAGE
+========================= */
+.contact-container {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  padding: 40px;
+  max-width: 700px;
+  margin: auto;
+}
+
+.contact-header {
+  text-align: left;
+  margin-bottom: 35px;
+}
+
+.contact-header p {
+  color: #555;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+label {
+  font-weight: 600;
+  color: #333;
+  font-size: 14px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+  font-family: inherit;
+  outline: none;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+  background-color: #fafafa;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #c1121f;
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.3);
+  background-color: #fff;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+button {
+  align-self: flex-start;
+  background-color: #c1121f;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+button:hover {
+  background-color: #005ec2;
+  transform: translateY(-2px);
+}
+
+.contact-info {
+  margin-top: 30px;
+  border-top: 1px solid #eee;
+  padding-top: 25px;
+  color: #555;
+}
+
+.contact-info p {
+  margin: 8px 0;
+  font-size: 15px;
+}
+
+.contact-info i {
+  color: #c1121f;
+  margin-right: 8px;
+}
+
+.contact-info a {
+  color: #c1121f;
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
 }
 
 /* =========================
@@ -202,7 +316,7 @@ section {
 
 section h2 {
   font-size: 22px;
-  border-bottom: 2px solid #007bff;
+  border-bottom: 2px solid #c1121f;
   display: inline-block;
   margin-bottom: 15px;
   padding-bottom: 5px;
@@ -243,7 +357,7 @@ section h2 {
 
 .skill-card h4 {
   margin-top: 0;
-  color: #007bff;
+  color: #c1121f;
   font-size: 16px;
 }
 
@@ -260,7 +374,6 @@ section h2 {
     height: auto;
     border-right: none;
     border-bottom: 1px solid #ddd;
-    flex-direction: column;
     align-items: center;
     padding: 20px;
   }
@@ -277,118 +390,6 @@ section h2 {
     text-align: center;
   }
 
-  .sidebar-footer {
-    border-top: none;
-    margin-top: 10px;
-  }
-}
-/* =========================
-   CONTACT PAGE
-========================= */
-.contact-container {
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-  padding: 40px;
-}
-
-.contact-header {
-  text-align: left;
-  margin-bottom: 35px;
-}
-
-.contact-header p {
-  color: #555;
-  font-size: 15px;
-  line-height: 1.7;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-  max-width: 700px;
-
-}
-
-label {
-  font-weight: 600;
-  color: #333;
-  font-size: 14px;
-}
-
-input,
-textarea {
-  width: 100%;
-  padding: 12px 14px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 15px;
-  font-family: inherit;
-  outline: none;
-  transition: border 0.2s ease, box-shadow 0.2s ease;
-  background-color: #fafafa;
-}
-
-input:focus,
-textarea:focus {
-  border-color: #007bff;
-  box-shadow: 0 0 4px rgba(0, 123, 255, 0.3);
-  background-color: #fff;
-}
-
-textarea {
-  resize: vertical;
-  min-height: 120px;
-}
-
-button {
-  align-self: flex-start;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 12px 25px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 15px;
-  transition: background-color 0.2s ease, transform 0.1s ease;
-}
-
-button:hover {
-  background-color: #005ec2;
-  transform: translateY(-2px);
-}
-
-.contact-info {
-  margin-top: 30px;
-  border-top: 1px solid #eee;
-  padding-top: 25px;
-  color: #555;
-}
-
-.contact-info p {
-  margin: 8px 0;
-  font-size: 15px;
-}
-
-.contact-info i {
-  color: #007bff;
-  margin-right: 8px;
-}
-
-.contact-info a {
-  color: #007bff;
-  text-decoration: none;
-}
-
-.contact-info a:hover {
-  text-decoration: underline;
-}
-
-/* =========================
-   CONTACT PAGE - RESPONSIVE
-========================= */
-@media (max-width: 768px) {
   .contact-container {
     padding: 25px;
   }
@@ -396,5 +397,10 @@ button:hover {
   button {
     width: 100%;
     text-align: center;
+  }
+
+  .sidebar-footer {
+    border-top: none;
+    margin-top: 10px;
   }
 }
