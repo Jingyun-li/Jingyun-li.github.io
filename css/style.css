@@ -1,17 +1,33 @@
-/* =========================
+/* =========================================================
    GLOBAL STYLES
-========================= */
+========================================================= */
+:root {
+  --accent: #c1121f;
+  --text: #333;
+  --bg: #f8f8f8;
+  --shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
 body {
   font-family: 'Helvetica Neue', sans-serif;
   margin: 0;
-  background-color: #f8f8f8;
-  color: #333;
+  background-color: var(--bg);
+  color: var(--text);
   display: flex;
 }
 
 h1 {
   font-size: 28px;
   margin-bottom: 40px;
+  color: #222;
+}
+
+h2 {
+  color: #444;
+  margin-top: 30px;
+  font-size: 20px;
+  border-left: 4px solid var(--accent);
+  padding-left: 10px;
 }
 
 a {
@@ -21,12 +37,17 @@ a {
 }
 
 a:hover {
-  color: #c1121f;
+  color: var(--accent);
 }
 
-/* =========================
+p {
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* =========================================================
    SIDEBAR
-========================= */
+========================================================= */
 .sidebar {
   width: 230px;
   background-color: #fff;
@@ -51,12 +72,11 @@ a:hover {
   margin-bottom: 25px;
 }
 
-/* Sidebar navigation links */
 .sidebar nav a {
   display: flex;
-  align-items: center; /* align icon + text */
+  align-items: center;
   gap: 10px;
-  color: #333;
+  color: var(--text);
   margin: 10px 0;
   font-weight: 500;
   font-size: 16px;
@@ -65,15 +85,14 @@ a:hover {
 
 .sidebar nav a i {
   font-size: 17px;
-  width: 20px; /* aligns icons vertically */
+  width: 20px;
   text-align: center;
 }
 
 .sidebar nav a:hover {
-  color: #c1121f;
+  color: var(--accent);
 }
 
-/* Sidebar footer */
 .sidebar-footer {
   font-size: 12px;
   color: #999;
@@ -83,27 +102,26 @@ a:hover {
   margin-top: 30px;
 }
 
-/* =========================
+/* =========================================================
    MAIN CONTENT AREA
-========================= */
+========================================================= */
 .content {
   margin-left: 270px;
   padding: 50px;
   width: calc(100% - 270px);
 }
 
-/* =========================
-   FOOTER (if used outside sidebar)
-========================= */
 footer {
   text-align: center;
   padding: 25px;
   color: #777;
+  border-top: 1px solid #ddd;
+  margin-top: 40px;
 }
 
-/* =========================
+/* =========================================================
    INDEX PAGE - PROJECT CARDS
-========================= */
+========================================================= */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -113,7 +131,7 @@ footer {
 .card {
   background: #fff;
   border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--shadow);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   overflow: hidden;
 }
@@ -142,22 +160,22 @@ footer {
 .card-content p {
   font-size: 14px;
   color: #555;
-  margin: 10px 0 15px 0;
+  margin: 10px 0 15px;
 }
 
 .card-content a {
-  text-decoration: none;
-  color: #c1121f;
+  color: var(--accent);
   font-weight: 600;
+  text-decoration: none;
 }
 
-/* =========================
+/* =========================================================
    ABOUT PAGE
-========================= */
+========================================================= */
 .about-container {
   background: #fff;
   border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--shadow);
   padding: 40px;
   display: flex;
   align-items: flex-start;
@@ -192,7 +210,7 @@ footer {
 
 .highlight-box {
   background-color: #f3f6fc;
-  border-left: 4px solid #c1121f;
+  border-left: 4px solid var(--accent);
   padding: 15px 20px;
   border-radius: 6px;
   font-size: 14px;
@@ -200,20 +218,19 @@ footer {
   color: #444;
 }
 
-/* =========================
+/* =========================================================
    CONTACT PAGE
-========================= */
+========================================================= */
 .contact-container {
   background: #fff;
   border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--shadow);
   padding: 40px;
   max-width: 700px;
   margin: auto;
 }
 
 .contact-header {
-  text-align: left;
   margin-bottom: 35px;
 }
 
@@ -231,7 +248,7 @@ form {
 
 label {
   font-weight: 600;
-  color: #333;
+  color: var(--text);
   font-size: 14px;
 }
 
@@ -250,8 +267,8 @@ textarea {
 
 input:focus,
 textarea:focus {
-  border-color: #c1121f;
-  box-shadow: 0 0 4px rgba(0, 123, 255, 0.3);
+  border-color: var(--accent);
+  box-shadow: 0 0 4px rgba(193, 18, 31, 0.3);
   background-color: #fff;
 }
 
@@ -262,7 +279,7 @@ textarea {
 
 button {
   align-self: flex-start;
-  background-color: #c1121f;
+  background-color: var(--accent);
   color: white;
   border: none;
   padding: 12px 25px;
@@ -273,7 +290,7 @@ button {
 }
 
 button:hover {
-  background-color: #005ec2;
+  background-color: #a10e19;
   transform: translateY(-2px);
 }
 
@@ -290,33 +307,32 @@ button:hover {
 }
 
 .contact-info i {
-  color: #c1121f;
+  color: var(--accent);
   margin-right: 8px;
 }
 
 .contact-info a {
-  color: #c1121f;
-  text-decoration: none;
+  color: var(--accent);
 }
 
 .contact-info a:hover {
   text-decoration: underline;
 }
 
-/* =========================
+/* =========================================================
    CV PAGE
-========================= */
+========================================================= */
 section {
   background: #fff;
   border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--shadow);
   padding: 30px 40px;
   margin-bottom: 35px;
 }
 
 section h2 {
   font-size: 22px;
-  border-bottom: 2px solid #c1121f;
+  border-bottom: 2px solid var(--accent);
   display: inline-block;
   margin-bottom: 15px;
   padding-bottom: 5px;
@@ -357,13 +373,91 @@ section h2 {
 
 .skill-card h4 {
   margin-top: 0;
-  color: #c1121f;
+  color: var(--accent);
   font-size: 16px;
 }
 
-/* =========================
+/* =========================================================
+   PROJECT PAGES
+========================================================= */
+.project-hero {
+  width: 100%;
+  height: clamp(220px, 35vh, 420px);
+  background-size: cover;
+  background-position: center 40%;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-hero::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: linear-gradient(to bottom, rgba(248, 248, 248, 0) 0%, #f8f8f8 100%);
+}
+
+.prose {
+  max-width: 860px;
+  line-height: 1.7;
+}
+
+.prose p {
+  margin-bottom: 18px;
+}
+
+.prose ul {
+  padding-left: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.prose li {
+  margin: 0.35rem 0;
+}
+
+.prose a {
+  color: var(--accent);
+}
+
+.prose footer {
+  margin-top: 40px;
+  border-top: 1px solid #ddd;
+  padding-top: 25px;
+  color: #777;
+  text-align: center;
+  font-size: 14px;
+}
+
+.view-project-btn {
+  display: inline-block;
+  background-color: var(--accent);
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  margin-top: 25px;
+  transition: background-color 0.25s ease, transform 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: 0 3px 10px rgba(193, 18, 31, 0.25);
+}
+
+.view-project-btn:hover {
+  background-color: #a10e19;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(193, 18, 31, 0.35);
+}
+
+.view-project-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(193, 18, 31, 0.3);
+}
+
+/* =========================================================
    RESPONSIVE DESIGN
-========================= */
+========================================================= */
 @media (max-width: 768px) {
   body {
     flex-direction: column;
