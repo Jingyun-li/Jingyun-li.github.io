@@ -3,111 +3,100 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Health Insurance Costs: Impact of Demographics and Lifestyle - Jingyun Li" />
+  <meta name="description" content="Health Insurance Costs - Jingyun Li" />
   <title>Health Insurance Costs | Jingyun Li</title>
 
-  <!-- Favicon -->
-  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/project.css" />
 
-  <!-- Icons -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-  />
-
-  <!-- Shared site stylesheet -->
-  <link rel="stylesheet" href="css/style.css" />
-  <script src="js/include.js" defer></script>
-
-  <!-- MathJax for LaTeX support -->
   <script>
     MathJax = {
       tex: { inlineMath: [["$", "$"], ["\\(", "\\)"]] },
       svg: { fontCache: "global" },
     };
   </script>
-  <script
-    async
-    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
-  ></script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 </head>
 
 <body>
-  <!-- Sidebar (loaded dynamically from sidebar.html) -->
+
+  <!-- Sidebar -->
   <div id="sidebar-container"></div>
 
-  <!-- Main Content -->
-  <div class="content">
-    <!-- Top image banner -->
-    <div
-      class="project-hero"
-      style="background-image: url('images/health_insurance.jpg');"
-    ></div>
+  <!-- Hero Section -->
+  <section class="hero" style="background-image: url('images/health_insurance.jpg');">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>Health Insurance Costs</h1>
+      <h2>Impact of Demographics and Lifestyle on Premium Pricing</h2>
+      <a href="health_insurance_full.html" class="view-project-btn">
+        <i class="fa-solid fa-arrow-right"></i> View Full Project
+      </a>
+    </div>
+  </section>
 
-    <h1>Health Insurance Costs</h1>
-    <p><strong>Impact of Demographics and Lifestyle on Premium Pricing</strong></p>
-    <p> full project accessible below </p>
-    <p>
-      This study analyzes how demographic and behavioral factors — such as age,
-      gender, BMI, number of children, smoking status, and region — affect
-      health-insurance charges for U.S. policyholders. Using statistical
-      modeling and regression diagnostics, we examined whether these predictors
-      can accurately forecast an individual’s expected premium cost.
-    </p>
+  <!-- Project Content -->
+  <section class="project-content">
+    <div class="project-inner">
+      <p>
+        This study analyzes how demographic and behavioral factors — such as age,
+        gender, BMI, number of children, smoking status, and region — affect
+        health-insurance charges for U.S. policyholders. Using statistical
+        modeling and regression diagnostics, we examined whether these predictors
+        can accurately forecast an individual’s expected premium cost.
+      </p>
 
-    <h2>Data Description</h2>
-    <p>
-      The dataset ($n = 1{,}338$, $k = 7$) was sourced from an anonymous U.S.
-      insurer and published on Kaggle. It includes numerical variables
-      (<i>age, BMI, charges</i>) and categorical variables
-      (<i>sex, smoker, region</i>). These attributes capture the main
-      policyholder characteristics relevant to premium pricing.
-    </p>
+      <h2>Data Description</h2>
+      <p>
+        The dataset ($n = 1{,}338$, $k = 7$) was sourced from an anonymous U.S.
+        insurer and published on Kaggle. It includes numerical variables
+        (<i>age, BMI, charges</i>) and categorical variables
+        (<i>sex, smoker, region</i>). These attributes capture the main
+        policyholder characteristics relevant to premium pricing.
+      </p>
 
-    <ul>
-      <li>Age, BMI, and number of children are continuous predictors.</li>
-      <li>Smoker status and region are categorical factors encoded as indicator variables.</li>
-      <li>No missing values were detected; minimal cleaning was required.</li>
-    </ul>
+      <ul>
+        <li>Age, BMI, and number of children are continuous predictors.</li>
+        <li>Smoker status and region are categorical factors encoded as indicator variables.</li>
+        <li>No missing values were detected; minimal cleaning was required.</li>
+      </ul>
 
-    <h2>Methodology</h2>
-    <p>
-      Multiple linear regression models were fitted in <b>R</b> to estimate the
-      relationship between insurance charges and demographic variables. Stepwise
-      selection, partial F-tests, and Box–Cox transformations were used to
-      refine model accuracy and verify the assumptions of linearity,
-      homoscedasticity, and normality.
-    </p>
+      <h2>Methodology</h2>
+      <p>
+        Multiple linear regression models were fitted in <b>R</b> to estimate the
+        relationship between insurance charges and demographic variables. Stepwise
+        selection, partial F-tests, and Box–Cox transformations were used to
+        refine model accuracy and verify assumptions of linearity,
+        homoscedasticity, and normality.
+      </p>
 
-    <ul>
-      <li>The initial full model achieved $R^2 \approx 0.75$ but showed non-normal residuals.</li>
-      <li>Log-transformations and interaction terms ($\text{BMI} \times \text{smoker}$) were tested to improve fit.</li>
-      <li>
-        The final interaction model reached $R^2 = 0.84$ and adjusted
-        $R^2 = 0.836$ ($p < 2\times10^{-16}$).
-      </li>
-    </ul>
+      <ul>
+        <li>The initial full model achieved $R^2 \approx 0.75$ but showed non-normal residuals.</li>
+        <li>Log-transformations and interaction terms ($\text{BMI} \times \text{smoker}$) were tested to improve fit.</li>
+        <li>
+          The final interaction model reached $R^2 = 0.84$ and adjusted
+          $R^2 = 0.836$ ($p < 2\times10^{-16}$).
+        </li>
+      </ul>
 
-    <h2>Findings</h2>
-    <p>
-      Smoking status was the dominant factor, increasing charges by over 200%.
-      Age and BMI also showed strong positive effects. Introducing the
-      $\text{BMI} \times \text{smoker}$ interaction captured the nonlinear
-      effect of BMI among smokers, substantially improving predictive accuracy.
-    </p>
+      <h2>Findings</h2>
+      <p>
+        Smoking status was the dominant factor, increasing charges by over 200%.
+        Age and BMI also showed strong positive effects. Introducing the
+        $\text{BMI} \times \text{smoker}$ interaction captured the nonlinear
+        effect of BMI among smokers, substantially improving predictive accuracy.
+      </p>
 
-    <h2>Key Insights</h2>
-    <p>
-      The refined model demonstrates that demographic and lifestyle variables
-      can predict insurance charges with high reliability. Although residual
-      normality remained imperfect due to right-skewed premium data, the model
-      provides valuable insights for pricing strategies and preventive-health
-      policy design.
-    </p>
+      <h2>Key Insights</h2>
+      <p>
+        The refined model demonstrates that demographic and lifestyle variables
+        can predict insurance charges with high reliability. Although residual
+        normality remained imperfect due to right-skewed premium data, the model
+        provides valuable insights for pricing strategies and preventive-health
+        policy design.
+      </p>
 
-    <a href="health_insurance_full.html" class="view-project-btn">
-      <i class="fa-solid fa-arrow-right"></i> View Full Project
-    </a>
-  </div>
+    </div>
+  </section>
 </body>
 </html>

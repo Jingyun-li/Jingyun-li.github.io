@@ -8,7 +8,7 @@
 
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/project.css" />
   <script src="js/include.js" defer></script>
 
   <!-- MathJax for LaTeX -->
@@ -25,36 +25,46 @@
   <!-- Sidebar -->
   <div id="sidebar-container"></div>
 
-  <!-- Main Content -->
-  <div class="content">
-    
-  <div
-      class="project-hero"
-      style="background-image: url('images/covid_analysis.jpg');"
-    ></div>
-
-    <h1>An Analysis of the COVID-19 Pandemic</h1>
-    <strong>Examining infection trends, mortality rates, and housing market correlations.</strong>
-
-    <h2>Overview</h2>
-    <p>
-      This project explores how the COVID-19 pandemic evolved across the United States using data
+  <!-- Hero Section -->
+  <div id="sidebar-container"></div>
+  
+  <section class="project-content">
+    <div class="project-inner">
+      <p>
+       This project explores how the COVID-19 pandemic evolved across the United States using data
       from Johns Hopkins University. The analysis investigates infection and mortality trends,
       applies hypothesis testing on changing fatality rates, and examines how regional housing
       prices responded during the pandemic period.
-    </p>
+      </p>
 
-    <h2>Methodology</h2>
-    <p>
-      COVID-19 case and death data were aggregated at both national and state levels.
+      <h2>Methodology</h2>
+      <p>
+        COVID-19 case and death data were aggregated at both national and state levels.
       Using <b>Python</b> and libraries such as <b>Pandas</b>, <b>Matplotlib</b>, and <b>Scikit-learn</b>,
       the project visualized cumulative growth, daily fluctuations, and cross-regional differences.
       A separate dataset from the <b>Federal Housing Finance Agency (FHFA)</b> provided regional
       housing price indices, which were combined with infection data for regression modeling.
-    </p>
 
-    <h2>Findings</h2>
-    <ul>
+      </p>
+
+      <ul>
+        <li>Age, BMI, and number of children are continuous predictors.</li>
+        <li>Smoker status and region are categorical factors encoded as indicator variables.</li>
+        <li>No missing values were detected; minimal cleaning was required.</li>
+      </ul>
+
+      <h2>Methodology</h2>
+      <p>
+        Multiple linear regression models were fitted in <b>R</b> to estimate the
+        relationship between insurance charges and demographic variables. Stepwise
+        selection, partial F-tests, and Box–Cox transformations were used to
+        refine model accuracy and verify assumptions of linearity,
+        homoscedasticity, and normality.
+      </p>
+
+
+      <h2>Findings</h2>
+      <ul>
       <li>
         Daily confirmed cases and deaths showed clear waves, peaking in mid-2020 and again in 2022,
         before stabilizing.
@@ -69,18 +79,16 @@
       </li>
     </ul>
 
-    <h2>Key Insights</h2>
-    <p>
-      The pandemic’s progression demonstrates both health and economic interdependence:
+      <h2>Key Insights</h2>
+      <p>
+        The pandemic’s progression demonstrates both health and economic interdependence:
       infection rates shaped public behavior and housing demand,
       while falling mortality and recovery rates reflected medical advances.
       Overall, the data indicates resilience in housing markets despite the unprecedented
       disruption caused by COVID-19.
-    </p>
+      </p>
 
-    <a href="covid_analysis_full.html" class="view-project-btn">
-      <i class="fa-solid fa-arrow-right"></i> View Full Project
-    </a>
-  </div>
+    </div>
+  </section>
 </body>
 </html>

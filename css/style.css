@@ -1,531 +1,412 @@
 /* =========================================================
-   GLOBAL STYLES
+   GLOBAL BASE
 ========================================================= */
-:root {
-  --accent: #c1121f;
-  --text: #333;
-  --bg: #f8f8f8;
-  --shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-}
-
-body {
-  font-family: 'Helvetica Neue', sans-serif;
+* {
+  box-sizing: border-box;
   margin: 0;
-  background-color: var(--bg);
-  color: var(--text);
-  display: flex;
+  padding: 0;
 }
 
-h1 {
-  font-size: 28px;
-  margin-bottom: 40px;
-  color: #222;
-}
-
-h2 {
-  color: #444;
-  margin-top: 30px;
-  font-size: 20px;
-  border-left: 4px solid var(--accent);
-  padding-left: 10px;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-a:hover {
-  color: var(--accent);
-}
-
-p {
-  line-height: 1.6;
-  margin-bottom: 20px;
+html, body {
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  scroll-behavior: smooth;
+  background: #f9f9f9;
 }
 
 /* =========================================================
    SIDEBAR
 ========================================================= */
 .sidebar {
-  width: 230px;
-  background-color: #fff;
-  border-right: 1px solid #ddd;
-  height: 100vh;
   position: fixed;
-  padding: 40px 25px;
-  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.05);
+  top: 0;
+  left: 0;
+  width: 240px;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* keep footer at bottom */
+  justify-content: space-between;
+  padding: 30px 20px;
+  z-index: 10;
 }
 
-.sidebar h2 {
-  font-size: 18px;
-  margin-bottom: 10px;
+/* Sidebar header text */
+.sidebar-content h2 {
+  font-family: 'Playfair Display', serif;
+  color: #fff;
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
 }
 
-.sidebar p {
-  font-size: 13px;
-  color: #666;
-  margin-bottom: 25px;
+.sidebar-content p {
+  color: rgba(255,255,255,0.8);
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
 }
 
+/* Sidebar links */
 .sidebar nav a {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: var(--text);
-  margin: 10px 0;
-  font-weight: 500;
-  font-size: 16px;
-  transition: color 0.2s ease;
+  display: flex;                 
+  align-items: center;           
+  gap: 10px;                     
+  color: rgba(255,255,255,0.9);
+  text-decoration: none;
+  margin-bottom: 1.2rem;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  white-space: nowrap;           
 }
 
 .sidebar nav a i {
-  font-size: 17px;
-  width: 20px;
+  width: 22px;                   
   text-align: center;
+  color: #f5c6c6;
+  flex-shrink: 0;                
 }
 
 .sidebar nav a:hover {
-  color: var(--accent);
+  color: #f5c6c6;
+  transform: translateX(4px);
 }
 
-.sidebar-footer {
-  font-size: 12px;
-  color: #999;
+footer p {
+  color: rgba(255,255,255,0.7);
+  font-size: 0.8rem;
   text-align: center;
-  border-top: 1px solid #eee;
-  padding-top: 15px;
-  margin-top: 30px;
 }
 
 /* =========================================================
-   MAIN CONTENT AREA
+   UNIVERSAL CONTENT WRAPPER
 ========================================================= */
 .content {
-  margin-left: 270px;
-  padding: 50px;
-  width: calc(100% - 270px);
+  margin-left: 240px;
+  padding: 80px 60px;
+  min-height: 100vh;
 }
 
-footer {
+.content h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.6rem;
+  color: #222;
   text-align: center;
-  padding: 25px;
-  color: #777;
-  border-top: 1px solid #ddd;
-  margin-top: 40px;
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.content h1::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: #f5c6c6;
+  margin: 12px auto 0;
+  border-radius: 2px;
+}
+
+/* Left-align text for CV page */
+body.cv-page .content h1,
+body.cv-page section {
+  text-align: left;
 }
 
 /* =========================================================
-   INDEX PAGE - PROJECT CARDS
+   INDEX PAGE (PORTFOLIO)
 ========================================================= */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 25px;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 40px;
+  width: 100%;
+  max-width: 1100px;
+}
+
+.card-link {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
 }
 
 .card {
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: var(--shadow);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
   overflow: hidden;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
 }
 
 .card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
 .card img {
   width: 100%;
-  height: 180px;
+  height: 200px;
   object-fit: cover;
 }
 
 .card-content {
-  padding: 18px 20px;
+  padding: 20px;
+  flex: 1;
 }
 
 .card-content h3 {
-  margin: 0;
-  font-size: 18px;
-  color: #222;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  color: #111;
+  margin-bottom: 10px;
+  position: relative;
 }
 
 .card-content p {
-  font-size: 14px;
+  font-size: 0.95rem;
+  line-height: 1.6;
   color: #555;
-  margin: 10px 0 15px;
 }
 
-.card-content a {
-  color: var(--accent);
-  font-weight: 600;
-  text-decoration: none;
+.card-content h3::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #f5c6c6;
+  transition: width 0.3s ease;
+  margin-top: 4px;
+}
+
+.card:hover .card-content h3::after {
+  width: 40%;
 }
 
 /* =========================================================
    ABOUT PAGE
 ========================================================= */
 .about-container {
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: var(--shadow);
-  padding: 40px;
   display: flex;
   align-items: flex-start;
+  justify-content: center;
   gap: 40px;
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
 }
 
 .about-container img {
-  width: 180px;
-  height: 180px;
+  width: 230px;
+  height: 230px;
   border-radius: 50%;
   object-fit: cover;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
 }
 
 .about-text {
   flex: 1;
+  line-height: 1.8;
 }
 
 .about-text h2 {
-  font-size: 22px;
-  margin-top: 0;
-  margin-bottom: 15px;
-  color: #1a1a1a;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  color: #222;
+  margin-bottom: 20px;
 }
 
 .about-text p {
-  font-size: 15px;
-  line-height: 1.8;
-  color: #555;
-  margin-bottom: 18px;
-}
-
-.highlight-box {
-  background-color: #f3f6fc;
-  border-left: 4px solid var(--accent);
-  padding: 15px 20px;
-  border-radius: 6px;
-  font-size: 14px;
-  margin: 25px 0;
+  font-size: 1.05rem;
   color: #444;
-}
-
-/* =========================================================
-   CONTACT PAGE
-========================================================= */
-.contact-container {
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: var(--shadow);
-  padding: 40px;
-  margin: auto;
-}
-
-.contact-header {
-  margin-bottom: 35px;
-}
-
-.contact-header p {
-  color: #555;
-  font-size: 15px;
-  line-height: 1.7;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  max-width: 800px;
-  gap: 18px;
-  
-}
-
-label {
-  font-weight: 600;
-  color: var(--text);
-  font-size: 14px;
-}
-
-input,
-textarea {
-  width: 100%;
-  padding: 12px 14px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 15px;
-  font-family: inherit;
-  outline: none;
-  transition: border 0.2s ease, box-shadow 0.2s ease;
-  background-color: #fafafa;
-}
-
-input:focus,
-textarea:focus {
-  border-color: var(--accent);
-  box-shadow: 0 0 4px rgba(193, 18, 31, 0.3);
-  background-color: #fff;
-}
-
-textarea {
-  resize: vertical;
-  min-height: 120px;
-}
-
-button {
-  align-self: flex-start;
-  background-color: var(--accent);
-  color: white;
-  border: none;
-  padding: 12px 25px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 15px;
-  transition: background-color 0.2s ease, transform 0.1s ease;
-}
-
-button:hover {
-  background-color: #a10e19;
-  transform: translateY(-2px);
-}
-
-.contact-info {
-  margin-top: 30px;
-  border-top: 1px solid #eee;
-  padding-top: 25px;
-  color: #555;
-}
-
-.contact-info p {
-  margin: 8px 0;
-  font-size: 15px;
-}
-
-.contact-info i {
-  color: var(--accent);
-  margin-right: 8px;
-}
-
-.contact-info a {
-  color: var(--accent);
-}
-
-.contact-info a:hover {
-  text-decoration: underline;
+  margin-bottom: 18px;
 }
 
 /* =========================================================
    CV PAGE
 ========================================================= */
 section {
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: var(--shadow);
-  padding: 30px 40px;
-  margin-bottom: 35px;
+  margin-bottom: 60px;
+  max-width: 950px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 section h2 {
-  font-size: 22px;
-  display: inline-block;
-  margin-bottom: 15px;
-  padding-bottom: 5px;
-}
-
-.edu-entry,
-.exp-entry {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  color: #111;
   margin-bottom: 20px;
+  border-left: 4px solid #f5c6c6;
+  padding-left: 12px;
 }
 
-.edu-entry h3,
-.exp-entry h3 {
-  margin: 0;
+section p, section li {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #444;
+}
+
+.edu-entry, .exp-entry {
+  margin-bottom: 25px;
+}
+
+.edu-entry h3 {
+  font-size: 1.2rem;
   color: #222;
-  font-size: 18px;
-}
-
-.edu-entry p,
-.exp-entry p {
-  margin: 5px 0;
-  color: #555;
-  font-size: 15px;
+  margin-bottom: 5px;
 }
 
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 15px;
+  gap: 20px;
 }
 
 .skill-card {
-  background: #f9f9f9;
-  border-radius: 8px;
-  padding: 15px 20px;
-  border: 1px solid #eee;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+  background: white;
+  border-radius: 10px;
+  padding: 18px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.skill-card h4 {
-  margin-top: 0;
-  color: var(--accent);
-  font-size: 16px;
-}
-
-#experience {
-  font-family: "Helvetica Neue", Arial, sans-serif;
-  margin: 40px 0;
-}
-
-#experience h2 {
-  font-size: 1.8em;
-  border-bottom: 2px solid #333;
-  padding-bottom: 6px;
-  margin-bottom: 20px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.exp-entry {
-  margin-bottom: 25px;
+.skill-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
 }
 
 .exp-header {
   display: flex;
   justify-content: space-between;
-  font-weight: 600;
-}
-
-.exp-left {
-  font-size: 1.05em;
-}
-
-.exp-right {
-  font-size: 1em;
-  color: #555;
+  font-weight: 500;
+  color: #222;
+  margin-bottom: 5px;
 }
 
 .exp-subheader {
-  margin-left: 15px;
   font-style: italic;
-  color: #444;
-  margin-bottom: 6px;
-}
-
-.exp-entry ul {
-  margin: 0 0 0 30px;
-  padding: 0;
-}
-
-.exp-entry li {
-  margin-bottom: 6px;
-  line-height: 1.4em;
+  color: #555;
+  margin-bottom: 10px;
 }
 
 /* =========================================================
-   PROJECT PAGES
+   CONTACT PAGE
 ========================================================= */
-.project-hero {
-  width: 100%;
-  height: clamp(220px, 35vh, 420px);
-  background-size: cover;
-  background-position: center 40%;
-  border-radius: 10px;
-  position: relative;
-  overflow: hidden;
+.contact-container {
+  max-width: 700px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
 }
 
-.project-hero::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 120px;
-  background: linear-gradient(to bottom, rgba(248, 248, 248, 0) 0%, #f8f8f8 100%);
-}
-
-.prose {
-  max-width: 860px;
-  line-height: 1.7;
-}
-
-.prose p {
-  margin-bottom: 18px;
-}
-
-.prose ul {
-  padding-left: 1.2rem;
-  margin-bottom: 1rem;
-}
-
-.prose li {
-  margin: 0.35rem 0;
-}
-
-.prose a {
-  color: var(--accent);
-}
-
-.prose footer {
-  margin-top: 40px;
-  border-top: 1px solid #ddd;
-  padding-top: 25px;
-  color: #777;
+.contact-header {
   text-align: center;
-  font-size: 14px;
+  margin-bottom: 40px;
 }
 
-.view-project-btn {
-  display: inline-block;
-  background-color: var(--accent);
-  color: #fff;
-  font-weight: 600;
-  text-decoration: none;
-  padding: 12px 24px;
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: 40px;
+}
+
+form label {
+  font-weight: 500;
+  color: #222;
+  margin-bottom: 6px;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #ccc;
   border-radius: 6px;
-  margin-top: 25px;
-  transition: background-color 0.25s ease, transform 0.15s ease, box-shadow 0.15s ease;
-  box-shadow: 0 3px 10px rgba(193, 18, 31, 0.25);
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  transition: border 0.3s ease;
 }
 
-.view-project-btn:hover {
-  background-color: #a10e19;
-  transform: translateY(-3px);
-  box-shadow: 0 6px 14px rgba(193, 18, 31, 0.35);
+form input:focus,
+form textarea:focus {
+  border-color: #f5c6c6;
+  outline: none;
 }
 
-.view-project-btn:active {
-  transform: translateY(0);
-  box-shadow: 0 2px 6px rgba(193, 18, 31, 0.3);
+form textarea {
+  height: 130px;
+  resize: none;
+}
+
+button[type="submit"] {
+  background: #f5c6c6;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #000;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button[type="submit"]:hover {
+  background: #e6a7a7;
+  transform: translateY(-2px);
+}
+
+.contact-info {
+  text-align: center;
+  font-size: 1rem;
+  color: #444;
+}
+
+.contact-info i {
+  color: #f5c6c6;
+  margin-right: 8px;
+}
+
+.contact-info a {
+  color: #222;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+  color: #f5c6c6;
 }
 
 /* =========================================================
-   RESPONSIVE DESIGN
+   RESPONSIVE
 ========================================================= */
-@media (max-width: 768px) {
-  body {
-    flex-direction: column;
-  }
+@media (max-width: 900px) {
+  .sidebar { width: 200px; }
+  .content, .project-content, .hero { margin-left: 200px; padding-left: 0; }
+}
 
+@media (max-width: 700px) {
   .sidebar {
+    position: relative;
     width: 100%;
     height: auto;
-    border-right: none;
-    border-bottom: 1px solid #ddd;
-    align-items: center;
-    padding: 20px;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 15px;
   }
 
-  .content {
+  .hero {
+    padding-left: 0;
+    height: 70vh;
+  }
+
+  .content, .project-content {
     margin-left: 0;
-    padding: 25px;
-    width: 100%;
+    padding: 60px 25px;
   }
 
   .about-container {
@@ -534,17 +415,9 @@ section h2 {
     text-align: center;
   }
 
-  .contact-container {
-    padding: 25px;
-  }
-
-  button {
-    width: 100%;
-    text-align: center;
-  }
-
-  .sidebar-footer {
-    border-top: none;
-    margin-top: 10px;
+  .about-container img {
+    width: 180px;
+    height: 180px;
+    margin-bottom: 20px;
   }
 }
