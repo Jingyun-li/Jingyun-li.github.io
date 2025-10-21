@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="An Analysis of the COVID-19 Pandemic - Jingyun Li" />
+  <title>COVID-19 Analysis | Jingyun Li</title>
+
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="js/include.js" defer></script>
+
+  <!-- MathJax for LaTeX -->
+  <script>
+    MathJax = {
+      tex: { inlineMath: [["$", "$"], ["\\(", "\\)"]] },
+      svg: { fontCache: "global" },
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+
+<body>
+  <!-- Sidebar -->
+  <div id="sidebar-container"></div>
+
+  <!-- Main Content -->
+  <div class="content">
+    
+  <div
+      class="project-hero"
+      style="background-image: url('images/covid_analysis.jpg');"
+    ></div>
+
+    <h1>An Analysis of the COVID-19 Pandemic</h1>
+    <strong>Examining infection trends, mortality rates, and housing market correlations.</strong>
+
+    <h2>Overview</h2>
+    <p>
+      This project explores how the COVID-19 pandemic evolved across the United States using data
+      from Johns Hopkins University. The analysis investigates infection and mortality trends,
+      applies hypothesis testing on changing fatality rates, and examines how regional housing
+      prices responded during the pandemic period.
+    </p>
+
+    <h2>Methodology</h2>
+    <p>
+      COVID-19 case and death data were aggregated at both national and state levels.
+      Using <b>Python</b> and libraries such as <b>Pandas</b>, <b>Matplotlib</b>, and <b>Scikit-learn</b>,
+      the project visualized cumulative growth, daily fluctuations, and cross-regional differences.
+      A separate dataset from the <b>Federal Housing Finance Agency (FHFA)</b> provided regional
+      housing price indices, which were combined with infection data for regression modeling.
+    </p>
+
+    <h2>Findings</h2>
+    <ul>
+      <li>
+        Daily confirmed cases and deaths showed clear waves, peaking in mid-2020 and again in 2022,
+        before stabilizing.
+      </li>
+      <li>
+        Hypothesis testing confirmed a statistically significant <b>decline in mortality rate</b>
+        after mid-2021 ($p < 0.001$), consistent with vaccine rollout and improved treatments.
+      </li>
+      <li>
+        Regression results showed a <b>strong positive correlation</b> between COVID-19 case counts
+        and regional housing price indices ($R^2 \approx 0.95$ nationwide).
+      </li>
+    </ul>
+
+    <h2>Key Insights</h2>
+    <p>
+      The pandemic’s progression demonstrates both health and economic interdependence:
+      infection rates shaped public behavior and housing demand,
+      while falling mortality and recovery rates reflected medical advances.
+      Overall, the data indicates resilience in housing markets despite the unprecedented
+      disruption caused by COVID-19.
+    </p>
+
+    <a href="covid_analysis_full.html" class="view-project-btn">
+      <i class="fa-solid fa-arrow-right"></i> View Full Project
+    </a>
+  </div>
+</body>
+</html>
