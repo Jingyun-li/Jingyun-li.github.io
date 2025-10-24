@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Retirement Portfolio Optimization - Jingyun Li" />
+  <title>Retirement Portfolio Optimization | Jingyun Li</title>
+
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/project.css" />
+  <script src="js/include.js" defer></script>
+
+  <!-- MathJax for LaTeX -->
+  <script>
+    MathJax = {
+      tex: { inlineMath: [["$", "$"], ["\\(", "\\)"]] },
+      svg: { fontCache: "global" },
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+
+<body>
+  <!-- Sidebar -->
+  <div id="sidebar-container"></div>
+
+  <!-- Hero Section -->
+  <section class="hero" style="background-image: url('images/retirement_portfolio.jpg');">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>Retirement Portfolio Optimization</h1>
+      <h2>Dynamic programming and simulation-driven investment strategy modeling.</h2>
+      <a href="Retirement_optimization_full.html" class="view-project-btn">
+        <i class="fa-solid fa-arrow-right"></i> View Full Project
+      </a>
+    </div>
+  </section>
+  
+  <section class="project-content">
+    <div class="project-inner">
+      <p>
+        This project develops a quantitative model to generate <b>personalized retirement investment advice</b>
+        for clients with varying income growth, age, and savings behavior.
+        The model identifies the <b>optimal portfolio allocation strategy</b> that maximizes lifetime expected utility
+        under uncertainty, using tools such as <b>stochastic dynamic programming</b> and <b>Monte Carlo simulation</b>.
+      </p>
+
+      <h2>Methodology</h2>
+      <p>
+        The optimization framework combines <b>dynamic programming</b> with <b>stochastic market simulations</b>
+        to determine an optimal year-by-year allocation strategy. The utility function penalizes shortfalls
+        below retirement targets, balancing risk and reward over time. 
+      </p>
+
+      <ul>
+        <li><b>Dynamic Policy Modeling:</b> Each simulated path evaluates annual portfolio choices based on wealth, age, and expected return.</li>
+        <li><b>Monte Carlo Simulation:</b> Thousands of correlated market outcomes are generated to approximate real-world uncertainty.</li>
+        <li><b>Utility Optimization:</b> The objective maximizes expected lifetime utility while imposing downside risk constraints.</li>
+      </ul>
+
+      <h2>Findings</h2>
+      <p>
+        Simulation results show that investment strategies evolve naturally with <b>age, wealth, and proximity to retirement</b>.
+        Younger clients allocate more toward growth-oriented portfolios, while older investors transition
+        toward capital preservation. Clients exceeding their savings trajectory maintain stability,
+        whereas those behind their targets adopt more aggressive allocations to catch up.
+      </p>
+
+      <ul>
+        <li><b>Wealth Sensitivity:</b> Higher wealth correlates with reduced risk-taking and lower fund volatility.</li>
+        <li><b>Age Dependency:</b> Younger investors prefer equities and higher-volatility portfolios; older ones favor bonds and stability.</li>
+        <li><b>Model Resolution:</b> Finer grid sizes and larger scenario counts yield smoother, more stable policy surfaces.</li>
+      </ul>
+
+      <h2>Key Insights</h2>
+      <p>
+        This study demonstrates how <b>quantitative methods can guide practical financial planning</b>.
+        The integrated approach of stochastic dynamic programming and Monte Carlo simulation
+        yields interpretable, data-driven investment strategies that align with <b>modern portfolio theory</b>
+        and <b>lifecycle investing principles</b>. These models empower financial advisors and clients alike
+        to make adaptive, informed decisions in uncertain markets.
+      </p>
+
+      <p>
+        Overall, the project illustrates that <b>data-driven portfolio optimization</b> can translate theoretical
+        models into <b>realistic, actionable retirement advice</b>—enhancing accuracy, risk awareness, and long-term
+        financial stability.
+      </p>
+    </div>
+  </section>
+</body>
+</html>
